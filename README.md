@@ -1,3 +1,3 @@
-# SQL_more_queries
+SQL_more_queries
 
-##Manipulating databases
+Manipulating databases
