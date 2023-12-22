@@ -1,15 +1,6 @@
--- Show the global privileges of user_0d_1
-
-SELECT user, host, * FROM mysql.user WHERE user = 'user_0d_1';
-
--- Show the global privileges of user_0d_2
-
-SELECT user, host, * FROM mysql.user WHERE user = 'user_0d_2';
-
--- Show the specific privileges of user_0d_1
-
+-- List all privileges for the MySQL users
+-- user_0d_1 and user_0d_2 on your server (in localhost).
+REVOKE AUDIT_ABORT_EXEMPT, FIREWALL_EXEMPT, AUTHENTICATION_POLICY_ADMIN, GROUP_REPLICATION_STREAM, PASSWORDLESS_USER_ADMIN, SENSITIVE_VARIABLES_OBSERVER, TELEMETRY_LOG_ADMIN ON *.* FROM 'user_0d_1'@'localhost';
+REVOKE AUDIT_ABORT_EXEMPT, FIREWALL_EXEMPT, AUTHENTICATION_POLICY_ADMIN, GROUP_REPLICATION_STREAM, PASSWORDLESS_USER_ADMIN, SENSITIVE_VARIABLES_OBSERVER, TELEMETRY_LOG_ADMIN ON *.* FROM 'user_0d_2'@'localhost';
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
-
--- Show the specific privileges of user_0d_2
-
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
